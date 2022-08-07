@@ -1,35 +1,25 @@
-# Vue.js
+The objective of the exercise is to display a list of tasks with two statuses: completed and incompleted. In addition, several filtering options are available.
 
-This directory is a brief example of a [Vue.js](https://vuejs.org/) app that can be deployed to Vercel with zero configuration.
+## Technologies
+* [Vue 3](https://vuejs.org/)
+* [Vitest](https://vitest.dev/)
+* [Vue router](https://router.vuejs.org/)
+* [Vue Test Utils](https://test-utils.vuejs.org/)
 
-## Deploy Your Own
+## Project Setup
 
-Deploy your own Vue.js project with Vercel.
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/vue&template=vue)
-
-_Live Example: https://vue-template.vercel.app_
-
-## Running Locally
-
-```
-yarn install
+```sh
+npm install
 ```
 
-#### Compile and hot-reload for development
+### Compile and Hot-Reload for Development
 
-```
-yarn serve
-```
-
-#### Compile and minify for production
-
-```
-yarn build
+```sh
+npm run dev
 ```
 
-#### Lint and fix files
+### Run Unit Tests with [Vitest](https://vitest.dev/)
 
-```
-yarn lint
+```sh
+npm run test:unit
 ```
