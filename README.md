@@ -6,6 +6,11 @@ The objective of the exercise is to display a list of tasks with two statuses: c
 * [Vue router](https://router.vuejs.org/)
 * [Vue Test Utils](https://test-utils.vuejs.org/)
 
+Deploy your own Vue.js project with Vercel.
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/saikrishnarao2/vue.git)
+
+
 ## Project Setup
 
 ```sh
