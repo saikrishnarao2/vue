@@ -26,12 +26,12 @@
       />
     </div>
     <a 
-      href="#" 
-      class="todo-item__clear"
+      href="" 
+      class="todo-item__clear link-danger"
       data-test="todo-item__clear"
       @click.prevent="$emit('on-clear')"
     >
-      x
+      <font-awesome-icon icon="fa-solid fa-trash-can" />
     </a>
   </div>
 </template>
@@ -104,11 +104,6 @@ export default {
   transform: translate(0, -50%);
   color: var(--color-link);
   text-decoration: none;
-  opacity: 0;
-}
-
-.todo-item:hover .todo-item__clear {
-  opacity: 1;
 }
 
 .todo-item__checkbox {

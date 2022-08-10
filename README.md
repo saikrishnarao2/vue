@@ -1,30 +1,37 @@
-The objective of the exercise is to display a list of tasks with two statuses: completed and incompleted. In addition, several filtering options are available.
+# Welcome to To-Do app!
 
-## Technologies
+## App features
+1. You can add a To-Do task
+1. The To-Do task can be marked as completed
+1. If the To-Do task is not marked as completed then it is treated as an active task
+1. The To-Do completed and active tasks can be viewed together or separately 
+
+## Demo site
+* This project is deployed on Vercel
+* Visit the [demo site](https://vue-git-main-saikrishnarao2.vercel.app/)
+
+## App setup
+1. Clone this git repository
+    ```
+    git clone https://github.com/saikrishnarao2/vue.git
+    ```
+1. Install node packages
+    ```
+    npm install
+    ```
+1. Compile and run the app
+    ```
+    npm run dev
+    ```
+1. Run unit tests
+    ```
+    npm run test:unit
+    ```
+
+## Frameworks and Dependencies
 * [Vue 3](https://vuejs.org/)
 * [Vitest](https://vitest.dev/)
 * [Vue router](https://router.vuejs.org/)
 * [Vue Test Utils](https://test-utils.vuejs.org/)
-
-Deploy your own Vue.js project with Vercel.
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/saikrishnarao2/vue.git)
-
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
+* [Bootstrap 5](https://getbootstrap.com/docs/5.2/getting-started/introduction/)
+* [Fontawesome 6](https://fontawesome.com/v6/docs)

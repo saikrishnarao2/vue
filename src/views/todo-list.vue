@@ -10,8 +10,9 @@
       >
       <input 
         v-model="newTodo"
-        class="todo-list__header-input"
+        class="form-control form-control-sm"
         type="text"
+        placeholder="Enter to-do activity here..."
         autofocus
         @keydown="onInputKeyDown"
       >
@@ -38,19 +39,25 @@
           :to="{ name: 'home' }"
           class="todo-list__nav-item"
         >
-          All
+          <button :href="href" @click="navigate" class='btn btn-sm btn-outline-secondary'>
+            All
+          </button>
         </router-link>
         <router-link 
           :to="{ name: 'active' }"
           class="todo-list__nav-item"
         >
-          Active
+          <button :href="href" @click="navigate" class='btn btn-sm btn-outline-primary'>
+            Active
+          </button>
         </router-link>
         <router-link 
           :to="{ name: 'completed' }"
           class="todo-list__nav-item"
         >
-          Completed
+          <button :href="href" @click="navigate" class='btn btn-sm btn-outline-success'>
+            Completed
+          </button>
         </router-link>
       </nav>
       <div 
@@ -58,9 +65,12 @@
         :class="{ 'todo-list__clear--shown': showCompletedButton && !filter }"
       >
         <a 
-          href="#"
+          href=""
+          class="link-danger"
           @click.prevent="clearCompletedItems"
-        >Clear completed</a>
+        >
+          Clear completed
+        </a>
       </div>
     </div>
   </main>
@@ -88,8 +98,8 @@ export default {
       todoValue: '',
       showCompletedButton: false,
       counterLabel: computed(() => {
-        const label = state.todoList.length === 1 ? 'item' : 'items'
-        return ` ${label} left`
+        const label = state.todoList.length === 1 ? 'task' : 'tasks'
+        return ` ${label} in list`
       })
     })
 
@@ -165,11 +175,6 @@ export default {
 
 .todo-list__header-checkbox {
   margin-right: var(--size-base);
-}
-
-.todo-list__header-input {
-  display: block;
-  width: 100%;
 }
 
 .todo-list__footer {

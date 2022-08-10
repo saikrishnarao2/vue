@@ -17,7 +17,7 @@ export default {
 <style>
 .todoapp {
   max-width: var(--max-width-sm);
-  margin: 130px auto 40px;
+  margin: 40px auto 40px;
   padding: var(--size-base-x-3);
 	background: #fff;
 	box-shadow: var(--box-shadow);
