@@ -76,11 +76,17 @@ export default {
     }
 
     const onKeyDown = event => {
+      
       if (event.keyCode === 27) {
         state.inputValue = props.modelValue.title
         state.isActive = false
       }
-      if (event.keyCode === 13) state.isActive = false
+      if (event.keyCode === 13) {
+        state.isActive = false
+      //state.
+      //props.modelValue.title=inputElement.value
+      emit('update:model-value', inputElement.value)
+      }
     }
 
     return { ...toRefs(state), inputElement, onBlur, onDbClick, onKeyDown }

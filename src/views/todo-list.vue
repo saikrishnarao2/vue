@@ -82,6 +82,9 @@ import {getTodoList, markAllTodos, setTodoList, setTodoItem} from '@/models/todo
 import TodoItem from '@/components/todo-item.vue'
 
 export default {
+  computed: {
+    console: () => console
+    },
   name: 'TodoList',
   components: { TodoItem },
   props: {
@@ -92,7 +95,7 @@ export default {
   },
   setup (props) {
     const state = reactive({
-      todoList: [],
+      todoList: localStorage.getItem('todos')?JSON.parse(localStorage.getItem('todos')):[],
       mainCheckbox: false,
       newTodo: '',
       todoValue: '',
@@ -117,10 +120,15 @@ export default {
       () => { filterTodoList() }
     )
 
-    const onClear = index => state.todoList.splice(index, 1)
+    const onClear = index => {
+      state.todoList.splice(index, 1) 
+      localStorage.setItem('todos',JSON.stringify(state.todoList))
+    }
+
 
     const onInputKeyDown = event => {
       if (event.keyCode === 13 && state.newTodo) {
+        
         setTodoItem({ title: state.newTodo, completed: false })
         state.todoList = getTodoList()
         state.newTodo = ''
@@ -135,9 +143,13 @@ export default {
     }
 
     const onUpdateTodoItem = (value, index) => {
-      if (!value) state.todoList.splice(index, 1)
-      else state.todoList[index].title = value
-
+     // if (!value) state.todoList.splice(index, 1)
+      //else state.todoList[index].title = value    
+      if(value.type=="text"){
+        value=value.value
+         if (!value) state.todoList.splice(index, 1)
+      else state.todoList[index].title = value    
+      }
       setTodoList(state.todoList)
     }
 
@@ -161,6 +173,7 @@ export default {
     return { ...toRefs(state), onClear, onInputKeyDown, onChangeTodoItem, onUpdateTodoItem, clearCompletedItems, onChangeMainCheckbox }
   }
 }
+
 </script>
 
 <style>

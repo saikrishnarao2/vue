@@ -7,6 +7,7 @@ import { library } from "@fortawesome/fontawesome-svg-core"
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome"
 
+import "bootstrap/dist/js/bootstrap.js"
 library.add(faTrashCan)
 
 const app = createApp(App)
@@ -14,5 +15,3 @@ const app = createApp(App)
 app.component("font-awesome-icon", FontAwesomeIcon)
 app.use(router)
 app.mount('#app')
-
-import "bootstrap/dist/js/bootstrap.js"
